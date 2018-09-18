@@ -13,5 +13,5 @@ object.
 4. Executing the transferred command on to the UR5 to pick and place object to desired location.
 
 
-![img_20180918_163351](https://user-images.githubusercontent.com/41652789/45716698-920f6500-bb8f-11e8-9f50-efdc70875f54.jpg)
+
 
