@@ -1,0 +1,43 @@
+ Program
+   BeforeStart
+     var_1≔socket_open("192.168.56.102",30000)
+     MoveJ
+       Waypoint_2
+   Robot Program
+     Loop var_1≟False
+       var_1≔socket_open("192.168.56.102",30000)
+       Wait: 0.5
+     pose_position≔get_actual_tcp_pose()
+     joint_position≔get_actual_joint_positions()
+     socket_send_string(pose_position)
+     Wait: 0.1
+     socket_send_string(joint_position)
+     Wait: 0.1
+     socket_send_string("asking_for_data")
+     Wait: 0.5
+     var_2≔socket_read_ascii_float(3)
+     Wait: 0.5
+     var_1≔ False 
+     'socket_close()'
+     If var_2[0]≠0
+       var_3≔p[var_2[1]/1000,var_2[2]/1000,0.5,0,0,d2r(var_2[3])]
+       var_5≔get_actual_tcp_pose()
+       var_4≔pose_trans(var_5,var_3)
+       MoveL
+         var_4
+         Wait: 2.0
+         Waypoint_3
+     MoveJ
+       Waypoint_1
+     socket_send_string("asking_for_drop_point")
+     Wait: 0.5
+     var_6≔socket_read_ascii_float(3)
+     Wait: 0.5
+     If var_6[0]≠0
+       var_7≔p[var_6[1]/1000,var_6[2]/1000,0.5,0,0,d2r(var_6[3])]
+       var_9≔get_actual_tcp_pose()
+       var_8≔pose_trans(var_9,var_7)
+       MoveL
+         var_8
+         Wait: 2.0
+         Waypoint_3
