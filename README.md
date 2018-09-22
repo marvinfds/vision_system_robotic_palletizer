@@ -2,7 +2,9 @@
 IMPLEMENTATION OF VISION SYSTEM IN ROBOTIC ARM (UR5) FOR NON-STANDARD PACKAGE PALLETIZING
 
 youtube link: https://youtu.be/jHuoBmo_By4
-my main goal  was to implement a vision system for the robotic arm so that it could be
+
+
+My main goal  was to implement a vision system for the robotic arm so that it could be
 executed as an autonomous robotic palletizer to solve multiple shape palletizing problem which
 usually requires human interference. This goal can be achieved by undergoing successive stages of
 implementation of the following.
